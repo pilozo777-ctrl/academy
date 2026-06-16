@@ -13,15 +13,20 @@ import {
   Award,
   Globe,
   DollarSign,
-  Undo2
+  Undo2,
+  MessageCircle
 } from "lucide-react";
 import { COURSES } from "../coursesData";
+import { User } from "../types";
+import WhatsAppRegisterForm from "./WhatsAppRegisterForm";
 
 interface LandingPageProps {
   onOpenAuth: (courseId?: string) => void;
+  onLoginSuccess: (user: User) => void;
+  showToast: (msg: string, type: "success" | "error" | "info") => void;
 }
 
-export default function LandingPage({ onOpenAuth }: LandingPageProps) {
+export default function LandingPage({ onOpenAuth, onLoginSuccess, showToast }: LandingPageProps) {
   // Frequently Asked Questions State
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -96,12 +101,22 @@ export default function LandingPage({ onOpenAuth }: LandingPageProps) {
           </div>
 
           {/* Quick Pricing note bar */}
-          <div className="flex items-center justify-center flex-wrap gap-2.5 sm:gap-4 text-xs text-gray-500 pt-2 font-mono">
-            <span>Inscripción única <strong className="text-white">$15 USDT</strong></span>
-            <span className="opacity-30">•</span>
-            <span>Mensualidad <strong className="text-white">$35 USDT</strong></span>
-            <span className="opacity-30">•</span>
-            <span>Garantía <strong className="text-white">7 Días</strong></span>
+          <div className="flex flex-col items-center justify-center gap-3 pt-2">
+            <div className="flex items-center justify-center flex-wrap gap-2.5 sm:gap-4 text-xs text-gray-500 font-mono">
+              <span>Inscripción única <strong className="text-white">$15 USDT</strong></span>
+              <span className="opacity-30">•</span>
+              <span>Mensualidad <strong className="text-white">$35 USDT</strong></span>
+              <span className="opacity-30">•</span>
+              <span>Garantía <strong className="text-white">7 Días</strong></span>
+            </div>
+            
+            <a
+              href="#whatsapp-direct-registration"
+              className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 transition underline font-medium cursor-pointer"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              Inscripción de alumno directa por WhatsApp (+593989012515)
+            </a>
           </div>
 
           {/* Grid de estadisticas */}
@@ -493,6 +508,25 @@ export default function LandingPage({ onOpenAuth }: LandingPageProps) {
 
             </div>
           </div>
+
+          {/* WhatsApp Direct registration section */}
+          <div className="mt-16 pt-12 border-t border-white/5 space-y-8" id="whatsapp-direct-registration">
+            <div className="max-w-2xl mx-auto space-y-2">
+              <span className="inline-flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                <MessageCircle className="w-3.5 h-3.5 animate-bounce" />
+                Inscripción Directa
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-white">¿Prefieres registrarte directamente por WhatsApp?</h3>
+              <p className="text-xs sm:text-sm text-gray-400 font-sans max-w-xl mx-auto">
+                Completa este formulario. Tu cuenta de estudiante se creará en segundos y serás conectado al instante con el <strong>Ing. Edinson Pilozo</strong> al número <strong>+593 98 901 2515</strong> para validar tu acceso.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto text-left">
+              <WhatsAppRegisterForm onRegisterSuccess={onLoginSuccess} showToast={showToast} />
+            </div>
+          </div>
+
         </div>
       </section>
 

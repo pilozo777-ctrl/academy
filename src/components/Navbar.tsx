@@ -78,6 +78,12 @@ export default function Navbar({
                   Precios
                 </button>
                 <button
+                  onClick={() => handleNavClick("#whatsapp-direct-registration")}
+                  className="text-emerald-400 hover:text-emerald-350 font-bold hover:underline focus:outline-none transition flex items-center gap-1 bg-emerald-500/5 px-2.5 py-1 rounded"
+                >
+                  Registro WhatsApp 💬
+                </button>
+                <button
                   onClick={() => handleNavClick("#faq")}
                   className="text-gray-400 hover:text-white hover:underline focus:outline-none transition"
                 >
@@ -200,6 +206,12 @@ export default function Navbar({
                 className="text-left w-full py-2.5 text-gray-400 hover:text-white hover:bg-white/5 px-3 rounded-md text-sm transition"
               >
                 Precios e Inscripción
+              </button>
+              <button
+                onClick={() => handleNavClick("#whatsapp-direct-registration")}
+                className="text-left w-full py-2.5 text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/5 px-3 rounded-md text-sm font-bold transition"
+              >
+                Inscripción WhatsApp 💬
               </button>
               <button
                 onClick={() => handleNavClick("#faq")}

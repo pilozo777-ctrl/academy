@@ -313,6 +313,28 @@ export default function AuthModal({
                     </label>
                   </div>
                 </div>
+
+                {/* WhatsApp Register Callout */}
+                <div className="bg-emerald-500/5 border border-emerald-500/15 p-3 rounded-lg text-center space-y-1 mt-3">
+                  <p className="text-[10px] text-gray-400 font-sans">
+                    ¿Prefieres soporte directo y registro por WhatsApp?
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onClose();
+                      setTimeout(() => {
+                        const target = document.getElementById("whatsapp-direct-registration");
+                        if (target) {
+                          target.scrollIntoView({ behavior: "smooth", block: "center" });
+                        }
+                      }, 150);
+                    }}
+                    className="text-emerald-400 hover:text-emerald-300 text-xs font-bold font-sans underline block mx-auto cursor-pointer focus:outline-none"
+                  >
+                    💬 Usar Registro por WhatsApp (+593989012515)
+                  </button>
+                </div>
               </>
             )}
 

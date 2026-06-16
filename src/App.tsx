@@ -103,7 +103,11 @@ export default function App() {
             showToast={showToast}
           />
         ) : (
-          <LandingPage onOpenAuth={handleOpenAuth} />
+          <LandingPage
+            onOpenAuth={handleOpenAuth}
+            onLoginSuccess={handleLoginSuccess}
+            showToast={showToast}
+          />
         )}
       </main>
 
