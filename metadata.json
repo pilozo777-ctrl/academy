@@ -1,0 +1,6 @@
+{
+  "name": "Computación + IA",
+  "description": "Plataforma de formación tecnológica en computación, automatización de ventas, AutoCAD e inteligencia artificial por el Ing. Edinson Pilozo con portal de estudiantes interactivo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
