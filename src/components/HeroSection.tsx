@@ -1,9 +1,9 @@
 import {
   ArrowDown,
   BookOpen,
-  Calendar,
   Check,
   Clock,
+  Gift,
   GraduationCap,
   Laptop,
   PlayCircle,
@@ -20,12 +20,12 @@ export function HeroSection() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_18%_12%,rgba(212,168,83,0.11),transparent_65%),radial-gradient(ellipse_60%_50%_at_85%_20%,rgba(23,54,107,0.28),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_18%_12%,rgba(212,168,83,0.12),transparent_65%),radial-gradient(ellipse_60%_50%_at_85%_20%,rgba(23,54,107,0.28),transparent_70%)]"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 lg:pt-16 pb-12 sm:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* COLUMNA IZQUIERDA — OFERTA PRINCIPAL BLACK FRIDAY */}
+          {/* COLUMNA IZQUIERDA — OFERTA PRINCIPAL MARKETING & VENTAS */}
           <div className="lg:col-span-7 space-y-6">
             <p className="font-display text-xs sm:text-[13px] font-bold tracking-[0.16em] text-[#D4A853] uppercase">
               {siteConfig.hero.kicker}
@@ -43,11 +43,11 @@ export function HeroSection() {
               {siteConfig.hero.subtitle}
             </p>
 
-            {/* Resumen directo de los 2 cursos */}
+            {/* Puntos clave de gancho y valor */}
             <div className="space-y-4 pt-1">
               {siteConfig.hero.quickHighlights.map((item) => (
                 <a
-                  key={item.id}
+                  key={item.title}
                   href={`#${item.id}`}
                   className="flex items-start gap-3.5 group"
                 >
@@ -88,7 +88,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* COLUMNA DERECHA — TARJETA BLACK FRIDAY DE INSCRIPCIÓN */}
+          {/* COLUMNA DERECHA — TARJETA BLACK FRIDAY + CLASE GRATIS */}
           <aside id="inscripcion" className="lg:col-span-5 scroll-mt-10">
             <div className="relative rounded-2xl border border-[#D4A853]/45 bg-gradient-to-b from-[#0E1E38] to-[#091528] p-6 sm:p-8 shadow-2xl shadow-black/50">
               <div className="space-y-2">
@@ -100,7 +100,7 @@ export function HeroSection() {
                 </h2>
               </div>
 
-              {/* Bloque de inversión Black Friday */}
+              {/* Bloque de inversión Black Friday ($15 único pago) */}
               <div className="mt-5 rounded-xl border border-[#D4A853]/30 bg-[#071222]/85 px-5 py-4 flex items-center justify-between gap-4">
                 <div>
                   <span className="block text-[11px] font-bold uppercase tracking-[0.15em] text-[#D4A853]">
@@ -116,10 +116,10 @@ export function HeroSection() {
                   </div>
                 </div>
                 <div className="text-right text-xs text-slate-300 leading-snug">
-                  <span className="block font-semibold text-white">
-                    2 cursos en 1
+                  <span className="block font-bold text-[#D4A853]">
+                    1.ª Clase GRATIS
                   </span>
-                  <span>Acceso completo</span>
+                  <span>Curso completo · 2 sem.</span>
                 </div>
               </div>
 
@@ -174,7 +174,7 @@ export function HeroSection() {
                     className="w-3.5 h-3.5 text-[#D4A853]"
                     aria-hidden="true"
                   />
-                  <span>2 cursos en 1</span>
+                  <span>Primera clase gratis</span>
                 </span>
               </div>
             </div>
@@ -189,8 +189,8 @@ export function HeroSection() {
               className="rounded-xl border border-white/10 bg-[#0B172A]/90 px-5 py-4"
             >
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#D4A853]">
-                {item.icon === "calendar" && (
-                  <Calendar className="w-4 h-4 shrink-0" aria-hidden="true" />
+                {item.icon === "gift" && (
+                  <Gift className="w-4 h-4 shrink-0" aria-hidden="true" />
                 )}
                 {item.icon === "laptop" && (
                   <Laptop className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -217,7 +217,7 @@ export function HeroSection() {
         <div className="mt-8 flex justify-center">
           <a
             href="#programa"
-            aria-label="Ver el contenido de los dos cursos"
+            aria-label="Ver el contenido del programa"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#0C192E] text-slate-300 transition-colors hover:border-[#D4A853] hover:text-[#D4A853]"
           >
             <ArrowDown className="w-4 h-4" />

@@ -12,7 +12,7 @@ export function FinalCtaSection() {
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl border border-[#D4A853]/35 bg-[#0C192E]/95 p-8 sm:p-12 text-center shadow-2xl shadow-black/30">
           <p className="font-display text-xs font-bold tracking-[0.18em] text-[#D4A853] uppercase">
-            {siteConfig.promotion.eventLabel} · {siteConfig.institution.name} ·{" "}
+            {siteConfig.promotion.eventLabel} · 1.ª CLASE GRATIS ·{" "}
             {siteConfig.promotion.price} ÚNICO PAGO
           </p>
 

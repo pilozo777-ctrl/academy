@@ -16,7 +16,7 @@ const configuredGroupUrl =
   import.meta.env.VITE_WHATSAPP_GROUP_URL?.trim() || DEFAULT_WHATSAPP_GROUP_URL;
 
 const ADVISOR_PREFILLED_MESSAGE =
-  "Hola, vi la promoción Black Friday de SERTECEP AMAZÓNICO ($25 único pago, modalidad 100% virtual, inicio lunes 23 de noviembre) y deseo recibir información para inscribirme al Curso 2 en 1: Redes Sociales con IA y Desarrollo Web + Apps.";
+  "Hola, vi la promoción Black Friday de SERTECEP AMAZÓNICO (primera clase GRATIS, inicio lunes 23 de noviembre, $15 único pago) y deseo información sobre el curso de Marketing Digital, Facebook con IA y Ventas por Internet.";
 
 export function buildWhatsAppChatUrl(message: string): string {
   return `https://wa.me/${sanitizedWhatsAppDigits}?text=${encodeURIComponent(message)}`;
@@ -48,43 +48,50 @@ export const siteConfig = {
     eventLabel: "EDICIÓN BLACK FRIDAY",
     startDate: "Lunes 23 de noviembre",
     duration: "2 semanas",
-    price: "$25",
-    priceNote: "Único pago · Incluye los 2 cursos",
+    price: "$15",
+    priceNote: "Único pago · 1.ª Clase GRATIS",
     onlineSchedule: "Lunes, Miércoles y Viernes · 19:00 (7:00 PM hora Ecuador)",
     includedPerks: [
-      "Modalidad 100% virtual en vivo",
+      "Primera clase 100% gratis en vivo",
       "Material digital incluido",
       "Clases grabadas para volver a verlas cuando quieras",
     ],
   },
   hero: {
-    kicker: "EDICIÓN BLACK FRIDAY · 100% VIRTUAL · INICIO 23 DE NOVIEMBRE",
-    headlineStart: "¡CONVIÉRTETE EN UN ",
-    headlineHighlight: "CREADOR DIGITAL",
+    kicker: "EDICIÓN BLACK FRIDAY · PRIMERA CLASE GRATIS · INICIO 23 DE NOVIEMBRE",
+    headlineStart: "¡DOMINA EL MARKETING Y ",
+    headlineHighlight: "VENDE MÁS CON IA",
     headlineEnd: "!",
     subtitle:
-      "No dejes pasar esta edición Black Friday. Dos cursos prácticos en un solo programa 100% virtual de 2 semanas para dominar la inteligencia artificial, vender más en redes sociales y crear la web y aplicación de tu negocio por un único pago de $25.",
+      "Aprende paso a paso cómo organizar tu perfil para negocio digital, publicar gratis y hacer anuncios pagados en Facebook con inteligencia artificial. Entra a la primera clase totalmente GRATIS y accede al programa completo de 2 semanas por solo $15 único pago.",
     quickHighlights: [
       {
-        id: "curso-1",
-        title: "CURSO 1 · Domina las redes y vende con IA",
+        id: "modulo-1",
+        title: "Primera clase 100% GRATIS en vivo (sin compromiso)",
         summary:
-          "Facebook, Instagram, WhatsApp Business, contenido comercial con IA y publicidad digital.",
+          "Comprueba nuestra metodología práctica antes de pagar y aprende desde el día 1.",
       },
       {
-        id: "curso-2",
-        title: "CURSO 2 · Crea la web y la app de tu negocio",
+        id: "modulo-1",
+        title: "Organiza tu perfil para negocio digital y redes que venden",
         summary:
-          "Página web comercial, catálogo digital, aplicaciones con IA y Flutter orientadas a ventas.",
+          "Estructura profesional de tu perfil, Fanpage de Facebook, Instagram y WhatsApp Business.",
+      },
+      {
+        id: "modulo-2",
+        title: "Publicaciones gratis, anuncios pagados en Facebook y ganchos de venta con IA",
+        summary:
+          "Estrategias orgánicas y pagadas para atraer clientes y cerrar ventas todos los días.",
       },
     ],
   },
   registrationCard: {
-    topTitle: "OFERTA BLACK FRIDAY · ¡TU OPORTUNIDAD COMIENZA AQUÍ!",
-    highlightTitle: "INSCRÍBETE AL CURSO 2 EN 1",
+    topTitle: "PRIMERA CLASE GRATIS · ¡TU OPORTUNIDAD COMIENZA AQUÍ!",
+    highlightTitle: "RESERVA TU CUPO EN LA CLASE GRATUITA",
     details: [
       { label: "Inicio", value: "Lunes 23 de noviembre" },
-      { label: "Duración", value: "2 semanas" },
+      { label: "Primera clase", value: "100% GRATIS en vivo" },
+      { label: "Duración", value: "2 semanas intensivas" },
       { label: "Modalidad", value: "100% Virtual (Online en vivo)" },
       {
         label: "Horario",
@@ -95,20 +102,20 @@ export const siteConfig = {
         value: "Material digital + Clases grabadas",
       },
     ],
-    primaryButtonLabel: "UNIRME AL GRUPO DE WHATSAPP",
+    primaryButtonLabel: "Unirme al grupo de la clase gratuita",
     secondaryButtonLabel: "HABLAR CON UN ASESOR",
   },
   logisticsStrip: [
     {
-      label: "Fecha de inicio",
-      value: "Lunes 23 de nov.",
-      detail: "Duración total: 2 semanas intensivas",
-      icon: "calendar",
+      label: "Acceso sin riesgo",
+      value: "1.ª Clase GRATIS",
+      detail: "Lunes 23 de nov. · 19:00 hrs Ecuador",
+      icon: "gift",
     },
     {
-      label: "Modalidad",
+      label: "Modalidad y duración",
       value: "100% Virtual",
-      detail: "Clases en vivo desde cualquier lugar",
+      detail: "2 semanas prácticas desde cualquier lugar",
       icon: "laptop",
     },
     {
@@ -124,72 +131,62 @@ export const siteConfig = {
       icon: "play",
     },
   ],
-  courses: [
+  modules: [
     {
-      id: "curso-1",
+      id: "modulo-1",
       number: "01",
-      badge: "CURSO 1",
-      title: "DOMINA LAS REDES Y VENDE CON IA",
+      badge: "MÓDULO 1",
+      title: "PERFIL DIGITAL, REDES Y PUBLICACIÓN GRATUITA",
       lead: "Aprenderás a:",
       benefits: [
         {
-          id: "fb-fanpage",
-          text: "Configurar tu fanpage de Facebook para tu negocio.",
-          icon: "share",
+          id: "profile-setup",
+          text: "Organizar tu perfil y fanpage de Facebook para convertirlo en un negocio digital confiable.",
+          icon: "usercheck",
         },
         {
-          id: "ig-wa",
-          text: "Configurar Instagram y WhatsApp Business.",
+          id: "ig-wa-setup",
+          text: "Configurar Instagram y WhatsApp Business con respuestas rápidas y catálogo comercial.",
           icon: "message",
         },
         {
+          id: "free-posts",
+          text: "Crear publicaciones gratuitas (orgánicas) en Facebook y grupos para conseguir clientes sin invertir en pauta.",
+          icon: "share",
+        },
+        {
           id: "ai-content",
-          text: "Crear publicaciones y contenido comercial con IA.",
+          text: "Diseñar textos persuasivos, ofertas y contenido comercial de alto impacto con Inteligencia Artificial.",
           icon: "sparkles",
-        },
-        {
-          id: "digital-ads",
-          text: "Realizar publicidad digital gratuita y pagada.",
-          icon: "megaphone",
-        },
-        {
-          id: "sales-growth",
-          text: "Captar clientes y fortalecer las ventas por internet.",
-          icon: "trending",
         },
       ],
     },
     {
-      id: "curso-2",
+      id: "modulo-2",
       number: "02",
-      badge: "CURSO 2",
-      title: "CREA LA WEB Y LA APP DE TU NEGOCIO",
+      badge: "MÓDULO 2",
+      title: "PUBLICIDAD PAGADA EN FACEBOOK Y GANCHOS DE VENTA",
       lead: "Aprenderás a:",
       benefits: [
         {
-          id: "commercial-web",
-          text: "Desarrollar una página web comercial.",
-          icon: "globe",
+          id: "paid-ads",
+          text: "Crear campañas de publicidad pagada en Facebook (Meta Ads) bien segmentadas sin desperdiciar dinero.",
+          icon: "megaphone",
         },
         {
-          id: "digital-catalog",
-          text: "Crear un catálogo digital de productos o servicios.",
-          icon: "layers",
+          id: "sales-hooks",
+          text: "Construir ganchos de venta irresistibles y llamados a la acción que generan mensajes reales.",
+          icon: "target",
         },
         {
-          id: "business-app",
-          text: "Diseñar una aplicación para tu emprendimiento.",
-          icon: "smartphone",
+          id: "lead-closing",
+          text: "Aplicar guiones de atención y cierre de ventas por WhatsApp para transformar consultas en pagos.",
+          icon: "trending",
         },
         {
-          id: "ai-flutter",
-          text: "Utilizar IA y Flutter para desarrollar soluciones digitales.",
-          icon: "cpu",
-        },
-        {
-          id: "orders-bookings",
-          text: "Crear aplicaciones orientadas a pedidos, ventas o reservas.",
-          icon: "shopping",
+          id: "recorded-practice",
+          text: "Repasar cada campaña y configuración con material digital y clases grabadas disponibles después de clase.",
+          icon: "play",
         },
       ],
     },
@@ -197,34 +194,34 @@ export const siteConfig = {
   audience: {
     title: "¿PARA QUIÉN ES ESTE PROGRAMA?",
     subtitle:
-      "Un programa serio, práctico y accesible pensado para quienes buscan resultados reales desde la primera semana.",
+      "Un entrenamiento directo y práctico para quienes desean dejar de improvisar en redes sociales y empezar a vender con estrategia.",
     profiles: [
       {
         number: "01",
-        title: "Emprendedores y comerciantes",
+        title: "Emprendedores y negocios",
         description:
-          "Emprendedores que desean vender sus productos o servicios por internet.",
+          "Emprendedores que desean organizar su perfil digital y vender sus productos o servicios por internet.",
         icon: "store",
       },
       {
         number: "02",
-        title: "Estudiantes y jóvenes",
+        title: "Comerciantes y vendedores",
         description:
-          "Estudiantes que quieren aprender habilidades digitales modernas.",
-        icon: "graduation",
+          "Personas que quieren dominar publicaciones gratuitas y publicidad pagada en Facebook sin malgastar presupuesto.",
+        icon: "megaphone",
       },
       {
         number: "03",
-        title: "Creadores y desarrolladores",
+        title: "Estudiantes y futuros creadores",
         description:
-          "Personas que buscan desarrollar páginas web y aplicaciones para negocios.",
-        icon: "code",
+          "Estudiantes que buscan aprender marketing digital, ganchos de venta e inteligencia artificial.",
+        icon: "graduation",
       },
     ],
   },
   finalCta: {
-    headline: "DOS CURSOS. NUEVAS HABILIDADES. MÁS OPORTUNIDADES.",
+    headline: "PRIMERA CLASE GRATIS. HABILIDADES REALES. MÁS VENTAS.",
     description:
-      "Iniciamos el lunes 23 de noviembre. Asegura tu participación en esta edición Black Friday 100% virtual por un único pago de $25 con clases en vivo (Lunes, Miércoles y Viernes 19:00 Ecuador), material digital y grabaciones incluidas.",
+      "Iniciamos el lunes 23 de noviembre. Entra sin costo a nuestra primera clase en vivo y comprueba cómo organizar tu perfil digital, publicar gratis y hacer publicidad en Facebook con IA. Programa completo de 2 semanas por solo $15 único pago, con material digital y clases grabadas incluidas.",
   },
 } as const;

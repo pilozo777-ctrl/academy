@@ -1,4 +1,4 @@
-import { Code2, GraduationCap, Store } from "lucide-react";
+import { GraduationCap, Megaphone, Store } from "lucide-react";
 import { siteConfig } from "../config/siteConfig";
 
 function ProfileIcon({ icon }: { icon: string }) {
@@ -7,10 +7,10 @@ function ProfileIcon({ icon }: { icon: string }) {
   switch (icon) {
     case "store":
       return <Store className={iconClass} />;
+    case "megaphone":
+      return <Megaphone className={iconClass} />;
     case "graduation":
       return <GraduationCap className={iconClass} />;
-    case "code":
-      return <Code2 className={iconClass} />;
     default:
       return <Store className={iconClass} />;
   }
